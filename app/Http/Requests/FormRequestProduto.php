@@ -14,7 +14,7 @@ class FormRequestProduto extends FormRequest {
 
         $request = [];
 
-        if ($this->method() == "POST") {
+        if ($this->method() == "POST" || $this->method() == "PUT") {
             $request = [
                 'nome' => 'required',
                 'valor' => 'required'
