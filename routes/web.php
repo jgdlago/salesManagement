@@ -45,9 +45,4 @@ Route::prefix('vendas')->group(function() {
     Route::get('/cadastrarVenda', [VendasController::class, 'cadastrarVenda'] )->name('cadastrar.venda');
     Route::post('/cadastrarVenda', [VendasController::class, 'cadastrarVenda'] )->name('cadastrar.venda');
 
-    Route::get('/atualizarVenda/{id}', [VendasController::class, 'atualizarVenda'] )->name('atualizar.venda');
-    Route::put('/atualizarVenda/{id}', [VendasController::class, 'atualizarVenda'] )->name('atualizar.venda');
-
-
-    Route::delete('/delete', [VendasController::class, 'delete'])->name('venda.delete');
 });
