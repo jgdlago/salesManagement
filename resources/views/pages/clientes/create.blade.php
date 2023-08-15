@@ -14,6 +14,7 @@
                 <div class="invalid-feedback"> {{ $errors->first('nome') }}</div>
             @endif
         </div>
+        
         <div class="mb-3">
             <label class="form-label">E-mail</label>
             <input value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" name="email">

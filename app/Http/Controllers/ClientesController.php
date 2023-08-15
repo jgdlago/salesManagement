@@ -47,16 +47,13 @@ class ClientesController extends Controller
         if ($request->method() == "PUT") {
             $data = $request->all();
 
-            $componentes = new Componentes();
-            $data['valor'] = $componentes->formatacaoMascaraDinheiroDecimal($data['valor']);
-
             $buscaRegistro = Cliente::find($id);
             $buscaRegistro->update($data);
 
-            return redirect()->route('produto.index');
+            return redirect()->route('cliente.index');
         } 
 
         $findCliente = Cliente::where('id', '=', $id)->first();
-        return view('pages.produtos.atualiza', compact('findCliente'));
+        return view('pages.clientes.atualiza', compact('findCliente'));
     }
 }
