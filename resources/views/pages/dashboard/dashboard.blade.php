@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="col-sm-6">
+        <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Usuario Cadastrados</h5>
@@ -44,6 +44,6 @@
                     <a href="#" class="btn btn-primary"> {{ $totalDeUsuarioCadastrado }}</a>
                 </div>
             </div>
-        </div> --}}
+        </div>
     </div>
 @endsection
