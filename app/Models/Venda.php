@@ -12,14 +12,23 @@ class Venda extends Model {
         'produto_id',
         'cliente_id',
     ];
-    public function produto()
-    {
+    public function produto() {
         return $this->belongsTo(Produto::class);
     }
 
-    public function cliente()
-    {
+    public function cliente() {
         return $this->belongsTo(Cliente::class);
+    }
+
+    public function getVendasPesquisarIndex(string $search = '') {
+
+        $venda = $this->where(function ($query) use ($search) {
+            if ($search) {
+                $query->where('numero_da_venda', $search);
+                $query->orWhere('numero_da_venda', 'LIKE', "%{$search}%");
+            }
+        })->get();
+        return $venda;
     }
 
 }
